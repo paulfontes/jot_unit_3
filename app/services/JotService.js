@@ -15,25 +15,44 @@ class JotServices {
 
     }
 
+    saveTheActiveJot(updatedData) {
+        const activeJot = AppState.activeJot
+        activeJot.body = updatedData.body
+        this.saveJotToLocal()
+
+    }
+
     createJot(jotData) {
         console.log('creating jot services', jotData);
-        let jot = new Jot(jotData)
+        const jot = new Jot(jotData)
         console.log('jot data', jot);
         AppState.jots.unshift(jot)
         this.saveJotToLocal()
 
     }
 
+    saveJot(jotId) {
+
+    }
+
+    deleteJot(jotId) {
+        const jotIndex = AppState.jots.findIndex((jot) => jot.id == jotId)
+        AppState.jots.splice(jotIndex, 1)
+        this.saveJotToLocal()
+    }
+
     saveJotToLocal() {
-        let jots = AppState.jots
-        saveState('jot-notes', jots)
+
+        saveState('jots', AppState.jots)
+        // console.log('saving data',jots);
+
     }
 
     loadJotFromLocal() {
-        let jots = loadState('jot', [Jot])
-        console.log('loaded data', jots);
-        AppState.jots = jots
+
+        AppState.jots = loadState('jots', [Jot])
     }
+
 }
 
 export const jotServices = new JotServices()

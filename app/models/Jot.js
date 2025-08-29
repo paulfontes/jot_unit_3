@@ -32,8 +32,8 @@ export class Jot {
             
           </div>
           <div class="col-4 mt-4">
-            <button class="">Save</button>
-            <button class="">Delete</button>
+            <button onclick="app.jotController.saveActiveJot('${this.body}')">Save</button>
+            <button onclick="app.jotController.deleteJot('${this.id}')">Delete</button>
           </div>
           <div class="d-flex justify-content-center">
             <textarea name="" id="" class="col-12 text-area">${this.body}</textarea>
