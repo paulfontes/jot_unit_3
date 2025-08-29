@@ -31,9 +31,6 @@ class JotServices {
 
     }
 
-    saveJot(jotId) {
-
-    }
 
     deleteJot(jotId) {
         const jotIndex = AppState.jots.findIndex((jot) => jot.id == jotId)

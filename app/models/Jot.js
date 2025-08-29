@@ -32,11 +32,13 @@ export class Jot {
             
           </div>
           <div class="col-4 mt-4">
-            <button onclick="app.jotController.saveActiveJot('${this.body}')">Save</button>
-            <button onclick="app.jotController.deleteJot('${this.id}')">Delete</button>
+          <button type="submit" form="jot-body" >Save</button>
+          <button onclick="app.jotController.deleteJot('${this.id}')">Delete</button>
           </div>
           <div class="d-flex justify-content-center">
-            <textarea name="" id="" class="col-12 text-area">${this.body}</textarea>
+          <form id="jot-body" onsubmit="app.jotController.saveActiveJot('${this.id}')">
+            <textarea name="body" id="jot-file" class="col-12 text-area form-control">${this.body}</textarea>
+          </form>
           </div>
     `
   }

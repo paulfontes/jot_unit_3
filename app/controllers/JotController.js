@@ -13,6 +13,7 @@ export class JotController {
         AppState.on('activeJot', this.drawActiveJot)
         // jotServices.loadJotFromLocal()
         jotServices.loadJotFromLocal()
+
     }
 
 
@@ -21,7 +22,8 @@ export class JotController {
         jotListElement.innerHTML = ''
         AppState.jots.forEach((jot) => {
             jotListElement.innerHTML += jot.jotTemplate
-        })
+        }
+        )
     }
 
     selectActiveJot(jotId) {
@@ -60,6 +62,7 @@ export class JotController {
         console.log('saving');
         event.preventDefault()
         let form = event.target
+        console.log('form', form)
         let formData = getFormData(form)
         jotServices.saveTheActiveJot(formData)
 
