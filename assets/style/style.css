@@ -15,3 +15,11 @@ main {
   justify-content: start;
   align-items: end;
 }
+
+.text-box {
+  max-width: 14vw;
+}
+
+.text-area {
+  height: 60vh;
+}

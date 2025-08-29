@@ -31,29 +31,47 @@
           </div>
           <div class="col-12">
             <p class="mb-0">Add a Jot</p>
-            <div class="form">
-              <div class="mb-2">
-                <label for="noteColor" class="form-label"></label>
-                <input type="color" id="noteColor">
-                <input type="text"></input>
-                <!-- <textarea type="text" placeholder="Title" name="newTitleJot" id="createTitleJot"></textarea> -->
-                <button>Submit</button>
-              </div>
+            <div>
+              <form onsubmit="app.jotController.createJot()">
+                <div class="mb-2">
+                  <label for="noteColor" class="form-label"></label>
+                  <input type="color" id="noteColor">
+                  <input name="title" type="text" class="text-box"></input>
+                  <!-- <textarea type="text" placeholder="Title" name="newTitleJot" id="createTitleJot"></textarea> -->
+                  <button type="submit">Submit</button>
+                </div>
+              </form>
             </div>
           </div>
-          <div class="col-12">
+          <div class="col-12" id="jot-list">
 
-            <div class="col-12">
+            <!-- <div class="col-12">
+              <h5>CSS Tricks</h5>
             </div>
-            <span>CSS Tricks</span>
-          </div>
-          <div class="col-12">
-            <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Vitae, nostrum praesentium modi error voluptas
-              sunt, iure non nemo quam voluptates qui eveniet dignissimos sequi molestias quod eos. Totam, ipsa. Quo.
-            </p>
+            <div class="col-12">
+              <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Vitae, nostrum praesentium modi error voluptas
+                sunt, iure non nemo quam voluptates qui eveniet dignissimos sequi molestias quod eos. Totam, ipsa. Quo.
+              </p>
+            </div> -->
           </div>
         </section>
       </div>
+      <div class="col-7">
+        <section class="row">
+          <div class="col-8" id="active-case-file">
+            <!-- <span><i class="mdi mdi-palette"></i></span>
+            <span><h3>CSS Tricks</h3></span>
+            <span>Date Created on:</span>
+            <p>Date of Last Update:</p>
+          </div>
+          <div class="col-4 mt-4">
+            <button class="">Save</button>
+            <button class="">Delete</button>
+          </div>
+          <div class="d-flex justify-content-center">
+            <textarea name="" id="" class="col-12 text-area"></textarea>
+          </div> -->
+        </section>
       </div>
     </section>
   </main>
