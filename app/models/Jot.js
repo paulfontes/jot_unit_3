@@ -26,20 +26,25 @@ export class Jot {
   // <p>${this.updatedAt}</p>
   get activeJotTemplate() {
     return `
-          <div class="col-8">
-            
-            <h3>${this.title}${this.color}</h3>
-            
-          </div>
-          <div class="col-4 mt-4">
-          <button type="submit" form="jot-body" >Save</button>
-          <button onclick="app.jotController.deleteJot('${this.id}')">Delete</button>
+        <section class="row justify-content-between">
+          <div class="col-9">
+            <h3>${this.title}</h3>
+            <span>${this.color}</span>
           </div>
           <div class="d-flex justify-content-center">
           <form class="jimbo" id="jot-body" onsubmit="app.jotController.saveActiveJot()">
-            <textarea name="body" id="jot-file" class=" col-12 text-area form-control">${this.body}</textarea>
+          <textarea name="body" id="jot-file" class=" col-12 text-area form-control">${this.body}</textarea>
           </form>
           </div>
+          <section class="row d-flex justify-content-between mt-2 mb-3">
+            <div class="col-6">
+              <button class="btn btn-success" type="submit" form="jot-body" >Save</button>
+            </div>
+            <div class="col-6">
+              <button class="btn btn-danger" onclick="app.jotController.deleteJot('${this.id}')">Delete</button>
+            </div>
+          </section>
+        </section>
     `
   }
 
