@@ -27,8 +27,8 @@ export class Jot {
   get activeJotTemplate() {
     return `
           <div class="col-8">
-            <span><i class="mdi mdi-palette"></i>${this.color}</span>
-            <span><h3>${this.title}</h3></span>
+            
+            <h3>${this.title}${this.color}</h3>
             
           </div>
           <div class="col-4 mt-4">
@@ -36,8 +36,8 @@ export class Jot {
           <button onclick="app.jotController.deleteJot('${this.id}')">Delete</button>
           </div>
           <div class="d-flex justify-content-center">
-          <form id="jot-body" onsubmit="app.jotController.saveActiveJot('${this.id}')">
-            <textarea name="body" id="jot-file" class="col-12 text-area form-control">${this.body}</textarea>
+          <form class="jimbo" id="jot-body" onsubmit="app.jotController.saveActiveJot()">
+            <textarea name="body" id="jot-file" class=" col-12 text-area form-control">${this.body}</textarea>
           </form>
           </div>
     `

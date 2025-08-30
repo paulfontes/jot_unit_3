@@ -15,14 +15,14 @@ class ObservableAppState extends EventEmitter {
     new Jot({
 
       title: 'Tips on how to stay fit!',
-      color: 'Pink',
+      color: 'Green',
       body: 'Workout and  bring a water bottle everywhere you go and keep it filled.'
 
     }),
     new Jot({
 
       title: 'Tips on how to stay well read!',
-      color: 'Pink',
+      color: 'Red',
       body: 'Always bring a book everywhere you go and keep it filled.'
 
     }),

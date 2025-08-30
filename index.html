@@ -3,9 +3,9 @@
 
 <head>
   <meta charset="UTF-8">
-  <div><b>jot_unit_3</b></div>
   <div class="ms-auto" id="authstate"></div>
   </div>
+  <div><b>jot_unit_3</b></div>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
   <link rel="icon" href="./assets/img/logo.png">
@@ -34,9 +34,9 @@
             <div>
               <form onsubmit="app.jotController.createJot()">
                 <div class="mb-2">
-                  <label for="noteColor" class="form-label"></label>
-                  <input type="color" id="noteColor">
-                  <input name="title" type="text" class="text-box"></input>
+                  <label for="jot-color"></label>
+                  <input name="color" type="color" id="jot-color">
+                  <input required minlength="3" maxlength="15" name="title" type="text" class="text-box"></input>
                   <!-- <textarea type="text" placeholder="Title" name="newTitleJot" id="createTitleJot"></textarea> -->
                   <button type="submit">Submit</button>
                 </div>

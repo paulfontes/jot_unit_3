@@ -65,6 +65,7 @@ export class JotController {
         console.log('form', form)
         let formData = getFormData(form)
         jotServices.saveTheActiveJot(formData)
+        this.drawJotList()
 
     }
 
