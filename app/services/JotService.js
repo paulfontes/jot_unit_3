@@ -18,6 +18,7 @@ class JotServices {
     saveTheActiveJot(updatedData) {
         const activeJot = AppState.activeJot
         activeJot.body = updatedData.body
+        activeJot.updatedAt = new Date();
         this.saveJotToLocal()
 
     }

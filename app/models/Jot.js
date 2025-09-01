@@ -7,8 +7,8 @@ export class Jot {
     this.title = data.title
     this.color = data.color
     this.body = data.body || 'Add Something'
-    this.createdAt = null
-    this.updatedAt = null
+    this.createdAt = data.createdAt == undefined ? new Date() : new Date(data.createdAt)
+    this.updatedAt = data.updatedAt == undefined ? new Date() : new Date(data.updatedAt)
   }
 
   get jotTemplate() {
@@ -16,7 +16,7 @@ export class Jot {
         <div onclick="app.jotController.selectActiveJot('${this.id}')" class="col-8 card mb-2">
             <span><b>${this.title}</b></span>
             <hr>
-            <p>${this.body}</p>
+            <p>${this.previewBody}</p>
           </div>
         `
   }
@@ -29,6 +29,9 @@ export class Jot {
         <section class="row justify-content-between">
           <div class="col-9">
             <h3>${this.title}</h3>
+            <small>Created on ${this.createdAtDate}</small>
+            <br>
+            <small>Updated at ${this.updatedAtDate}</small>
             <div class="shadow position-relative jot-border d-flex justify-content-center" style="border-color: ${this.color};">
             </div>
           </div>
@@ -47,5 +50,32 @@ export class Jot {
     `
   }
 
+  get createdAtDate() {
+    return this.createdAt.toLocaleDateString('en-US', {
+      year: "numeric",
+      month: "short",
+      weekday: "short",
+      day: "2-digit"
+    })
+  }
+
+  get updatedAtDate() {
+    if (this.updatedAt == null) {
+      return "not saved"
+    }
+
+    return this.updatedAt.toLocaleString('en-US', {
+      year: '2-digit',
+      month: '2-digit',
+      hour: "numeric",
+      minute: 'numeric',
+      second: 'numeric'
+
+    })
+  }
+
+  get previewBody() {
+    return this.body.length > 30 ? this.body.slice(0, 30) + "..." : this.body;
+  }
 
 }

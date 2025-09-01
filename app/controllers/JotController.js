@@ -63,6 +63,8 @@ export class JotController {
         let formData = getFormData(form)
         jotServices.saveTheActiveJot(formData)
         this.drawJotList()
+        this.drawActiveJot()
+
 
     }
 
@@ -85,6 +87,8 @@ export class JotController {
         const numOfJotsElm = document.getElementById('numOfJots')
         numOfJotsElm.innerHTML = `${numOfJots}x Jots`
     }
+
+
 }
 
 
