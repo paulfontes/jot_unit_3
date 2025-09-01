@@ -29,13 +29,12 @@ export class Jot {
         <section class="row justify-content-between">
           <div class="col-9">
             <h3>${this.title}</h3>
-            <span>${this.color}</span>
           </div>
-          <div class="d-flex justify-content-center">
-          <form class="jimbo" id="jot-body" onsubmit="app.jotController.saveActiveJot()">
-          <textarea name="body" id="jot-file" class=" col-12 text-area form-control">${this.body}</textarea>
-          </form>
-          </div>
+          <div class="shadow position-relative jot-border d-flex justify-content-center" style="border-color: ${this.color};">
+           <form class="jimbo" id="jot-body" onsubmit="app.jotController.saveActiveJot()">
+           </div>
+             <textarea name="body" id="jot-file" class=" col-12 text-area form-control">${this.body}</textarea>
+            </form>
           <section class="row d-flex justify-content-between mt-2 mb-3">
             <div class="col-6">
               <button class="btn btn-success" type="submit" form="jot-body" >Save</button>

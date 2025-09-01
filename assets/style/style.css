@@ -25,6 +25,8 @@ main {
   opacity: .85;
   height: 60vh;
   width: 40vw;
+}
 
-
+.jot-border {
+  border: inset 10px black;
 }
