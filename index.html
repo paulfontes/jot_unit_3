@@ -27,14 +27,14 @@
       <div class="col-5">
         <section class="row">
           <div class="col-11 d-flex justify-content-end">
-            <span># of Notes</span>
+            <span id="numOfJots"># Jots</span>
           </div>
           <div class="col-12">
             <p class="mb-0">Add a Jot</p>
             <div>
               <form onsubmit="app.jotController.createJot()">
                 <div class="mb-2">
-                  <label for="jot-color">Pick a Color</label>
+                  <label for="jot-color"></label>
                   <input name="color" type="color" id="jot-color">
                   <input required minlength="3" maxlength="15" name="title" type="text" class="text-box"></input>
                   <!-- <textarea type="text" placeholder="Title" name="newTitleJot" id="createTitleJot"></textarea> -->

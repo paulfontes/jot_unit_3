@@ -13,7 +13,6 @@ export class JotController {
         AppState.on('activeJot', this.drawActiveJot)
         // jotServices.loadJotFromLocal()
         jotServices.loadJotFromLocal()
-
     }
 
 
@@ -39,8 +38,8 @@ export class JotController {
             activeJotElm.innerHTML = activeJot.activeJotTemplate
         } else {
             activeJotElm.innerHTML = `
-            <p>Select a to view Fully</p>
-            `
+        <p>Select a to view Fully</p>
+        `
         }
     }
 
@@ -51,8 +50,8 @@ export class JotController {
         console.log('target');
         let jotData = getFormData(form)
         console.log('data', jotData);
-
         jotServices.createJot(jotData)
+        this.numberOfJots()
 
         // @ts-ignore
         form.reset()
@@ -79,6 +78,12 @@ export class JotController {
         console.log('deleting' + jotId);
 
         jotServices.deleteJot(jotId)
+    }
+
+    numberOfJots() {
+        const numOfJots = AppState.jots.findIndex.length
+        const numOfJotsElm = document.getElementById('numOfJots')
+        numOfJotsElm.innerHTML = `${numOfJots}x Jots`
     }
 }
 

@@ -29,6 +29,7 @@ class JotServices {
         AppState.jots.unshift(jot)
         this.saveJotToLocal()
 
+
     }
 
 
