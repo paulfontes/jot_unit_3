@@ -6,18 +6,20 @@ export class Jot {
     this.id = generateId()
     this.title = data.title
     this.color = data.color
-    this.body = data.body || 'Add Something'
+    this.body = data.body || ''
     this.createdAt = data.createdAt == undefined ? new Date() : new Date(data.createdAt)
     this.updatedAt = data.updatedAt == undefined ? new Date() : new Date(data.updatedAt)
   }
 
   get jotTemplate() {
     return `
-        <div onclick="app.jotController.selectActiveJot('${this.id}')" class="col-8 card mb-2">
-            <span><b>${this.title}</b></span>
-            <hr>
-            <p>${this.previewBody}</p>
-          </div>
+    <div onclick="app.jotController.selectActiveJot('${this.id}')" class="col-8 card mb-2">
+    <span><b>${this.title}</b></span>
+    <div class="shadow position-relative jot-border d-flex justify-content-center" style="border-color: ${this.color};">
+    <hr>
+    <p>${this.previewBody}</p>
+    </div>
+    </div>
         `
   }
 
@@ -29,11 +31,11 @@ export class Jot {
         <section class="row justify-content-between">
           <div class="col-9">
             <h3>${this.title}</h3>
-            <small>Created on ${this.createdAtDate}</small>
-            <br>
-            <small>Updated at ${this.updatedAtDate}</small>
             <div class="shadow position-relative jot-border d-flex justify-content-center" style="border-color: ${this.color};">
             </div>
+            <small>Created on: ${this.createdAtDate}</small>
+            <br>
+            <small>Updated on: ${this.updatedAtDate}</small>
           </div>
           <form class="jimbo" id="jot-body" onsubmit="app.jotController.saveActiveJot()">
           <textarea placeholder="Put your notes here!" name="body" id="jot-file" class=" col-12 text-area form-control">${this.body}</textarea>
@@ -54,7 +56,6 @@ export class Jot {
     return this.createdAt.toLocaleDateString('en-US', {
       year: "numeric",
       month: "short",
-      weekday: "short",
       day: "2-digit"
     })
   }
@@ -69,7 +70,7 @@ export class Jot {
       month: '2-digit',
       hour: "numeric",
       minute: 'numeric',
-      second: 'numeric'
+      day: '2-digit'
 
     })
   }
