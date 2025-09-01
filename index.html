@@ -27,15 +27,15 @@
       <div class="col-5">
         <section class="row">
           <div class="col-11 d-flex justify-content-end">
-            <span id="numOfJots"># Jots</span>
+            <span id="numOfJots"> x Jots</span>
           </div>
           <div class="col-12">
-            <p class="mb-0">Add a Jot</p>
+            <p class="mb-1">Add a Jot</p>
             <div>
               <form onsubmit="app.jotController.createJot()">
-                <div class="mb-2">
-                  <label for="jot-color"></label>
-                  <input name="color" type="color" id="jot-color">
+                <div class="mb-2 d-flex align-bottom">
+                  <label class="" for="jot-color"></label>
+                  <input class="color-square" name="color" type="color" id="jot-color">
                   <input required minlength="3" maxlength="15" name="title" type="text" class="text-box"></input>
                   <!-- <textarea type="text" placeholder="Title" name="newTitleJot" id="createTitleJot"></textarea> -->
                   <button type="submit">Submit</button>
@@ -78,7 +78,7 @@
 
   <footer class="text-bg-dark">
     <div class="text-center">
-      <p class="mb-0"><small>Made with <i class="mdi mdi-heart text-pink"></i> by CodeWorks</small></p>
+      <p class="mb-0"><small>Made with <i class="mdi mdi-heart text-pink"></i> by Paul F!</small></p>
     </div>
   </footer>
 

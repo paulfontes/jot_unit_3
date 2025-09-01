@@ -11,8 +11,8 @@ export class JotController {
         this.selectActiveJot()
         AppState.on('jots', this.drawJotList)
         AppState.on('activeJot', this.drawActiveJot)
-        // jotServices.loadJotFromLocal()
         jotServices.loadJotFromLocal()
+        this.numberOfJots()
     }
 
 
@@ -32,14 +32,13 @@ export class JotController {
     }
 
     drawActiveJot() {
+
         const activeJotElm = document.getElementById('active-case-file')
         const activeJot = AppState.activeJot
         if (activeJot != null) {
             activeJotElm.innerHTML = activeJot.activeJotTemplate
         } else {
-            activeJotElm.innerHTML = `
-        <p>Select a to view Fully</p>
-        `
+            activeJotElm.innerHTML = ``
         }
     }
 
@@ -52,7 +51,6 @@ export class JotController {
         console.log('data', jotData);
         jotServices.createJot(jotData)
         this.numberOfJots()
-
         // @ts-ignore
         form.reset()
     }
@@ -78,10 +76,12 @@ export class JotController {
         console.log('deleting' + jotId);
 
         jotServices.deleteJot(jotId)
+        this.numberOfJots()
+        this.selectActiveJot()
     }
 
     numberOfJots() {
-        const numOfJots = AppState.jots.findIndex.length
+        const numOfJots = AppState.jots.length
         const numOfJotsElm = document.getElementById('numOfJots')
         numOfJotsElm.innerHTML = `${numOfJots}x Jots`
     }

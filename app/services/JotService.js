@@ -51,6 +51,10 @@ class JotServices {
         AppState.jots = loadState('jots', [Jot])
     }
 
+    // numOfJots() {
+    //     const numOfJots = AppState.jots.length
+    // }
+
 }
 
 export const jotServices = new JotServices()

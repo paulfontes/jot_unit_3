@@ -30,3 +30,7 @@ main {
 .jot-border {
   border: inset 10px black;
 }
+
+.color-square {
+  height: 30px;
+}
